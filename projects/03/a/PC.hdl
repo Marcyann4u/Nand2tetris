@@ -17,7 +17,7 @@ CHIP PC {
 
     PARTS:
     // passa por todos if else até a saída
-    Register(in=resetMuxOut, load=true, out=out, out=reg    Out);
+    Register(in=resetMuxOut, load=true, out=out, out=regOut);
 
     // reset 
     Mux16(a=loadMuxOut, b[0..15]=false, sel=reset, out=resetMuxOut);
