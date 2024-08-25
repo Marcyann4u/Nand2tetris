@@ -9,7 +9,9 @@ Vamos construir um computador moderno do zero a partir do absoluto NAND!
 | 1. Lógica Booleana | [link](./projects/01/) |
 | 2. Aritmética Booleana | [link](./projects/02/) |
 | 3. Memória | [link](./projects/03/) |
+| 4. Linguagem de máquina | [link](./projects/04/) |
 
-<!-- ![Diário estudando NAND ❤️](./files/diário.txt) -->
+
+![Diário estudando NAND ❤️](./files/diário.md)
 
 Elementos de Sistemas Computacionais - UFRPE
