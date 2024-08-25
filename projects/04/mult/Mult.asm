@@ -19,7 +19,7 @@
 //  if i > multiplicador vapara a puta que te pariu
 //      produto = multiplicando + produto
 //       i = i + 1
-//  vapara a puta que te pariu:
+// a puta que te pariu:
 // R2 = produto
         // Olá, Marcely do futuro, boa sorte em entender essa porra
 
