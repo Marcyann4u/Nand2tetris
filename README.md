@@ -12,6 +12,6 @@ Vamos construir um computador moderno do zero a partir do absoluto NAND!
 | 4. Linguagem de máquina | [link](./projects/04/) |
 
 
-![Diário estudando NAND ❤️](./files/diário.md)
+[Diário estudando NAND ❤️](./files/diário.md)
 
 Elementos de Sistemas Computacionais - UFRPE
