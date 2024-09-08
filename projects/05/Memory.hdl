@@ -27,5 +27,27 @@ CHIP Memory {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // RAM16K - 0x0000 até 0x3FFF
+    // é a memória principal do Hack
+    RAM16K(in=in, load=RAMload, address=address[0..13], out=RAMout);
+    // Screen - 0x4000 até 0x5FFF
+    Screen(in=in, load=ScreenLoad, address=address[0..12], out=ScreenOut);
+    //Keyboard - 0x6000
+    Keyboard(out=KeyboardOut);
+
+    // Direciona o sinal load para a RAM, tela ou teclado com base nos bits 13..14
+    // 00 - ram1
+    // 01 - ram2
+    // 10 - screen
+    // 11 - keyboard
+    DMux4Way(in=load, sel=address[13..14], a=RAMload1, b=RAMload2, c=ScreenLoad, d=KeyboardLoad);
+    // combina o ram1 e ram2 pra decidir se carrega a ram ou não
+    Or(a=RAMload1, b=RAMload2, out=RAMload);
+
+    // seleciona a saída final com base nos bits 13..14
+    // 00 - ram1
+    // 01 - ram2
+    // 10 - screen
+    // 11 - keyboard
+    Mux4Way16(a=RAMout, b=RAMout, c=ScreenOut, d=KeyboardOut, sel=address[13..14], out=out);
 }
