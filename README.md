@@ -10,6 +10,7 @@ Vamos construir um computador moderno do zero a partir do absoluto NAND!
 | 2. Aritmética Booleana | [link](./projects/02/) |
 | 3. Memória | [link](./projects/03/) |
 | 4. Linguagem de máquina | [link](./projects/04/) |
+| 5. Arquitetura do computador | [link](./projects/05/) |
 
 
 [Diário estudando NAND ❤️](./files/diário.md)
