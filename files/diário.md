@@ -19,3 +19,4 @@
 5° Semana
 
 - O bom filho à casa torna, Hardware Simulator, nunca te critiquei. Obrigada por voltar.
+- Não sei se eu gosto dessa cadeira ou se o professor é tão bom e tão legal que ele tornou esse assunto legal. Definitivamente se não fosse Victor eu não sei nem se teria ânimo pra aprender esse negócio.
