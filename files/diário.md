@@ -15,3 +15,7 @@
 
 - EU ENTENDI... EU ENTENDI COMO QUE CHEGA NO TETRIS... E ISSO NÃO ME DEIXA FELIZ...
 - EU SEMPRE FUI CONTRA FAZER PSEUDOCÓDIGO ATÉ CONHECER O ASSEMBLY
+
+5° Semana
+
+- O bom filho à casa torna, Hardware Simulator, nunca te critiquei. Obrigada por voltar.
