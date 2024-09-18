@@ -1,0 +1,27 @@
+class Cookie {
+    field int x, y;
+    field int size;
+
+    constructor Cookie new(int Ax, int Ay, int Asize){
+        let x = Ax;
+        let y = Ay;
+        let size = Asize;
+        do draw();
+        return this;
+    }
+
+
+    method void draw()
+    {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, x + size, y + size);
+        return;
+    }
+    /** Disposes this square. */
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+
+}

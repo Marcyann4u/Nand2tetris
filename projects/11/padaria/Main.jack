@@ -1,0 +1,9 @@
+class Main {
+    function void main() {
+        var CookieGame game;
+        let game =  CookieGame.new();
+        do game.run();
+        do game.dispose();
+        return;
+    }
+}
