@@ -1,0 +1,4 @@
+Problemas não resolvidos
+
+- não consegui colocar as imagens no tamanho q eu queria 
+- Alguns problemas relacionados a alocação de memória com relação ao valor de todas as variáveis...

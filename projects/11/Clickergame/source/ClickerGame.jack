@@ -1,0 +1,281 @@
+class ClickerGame {
+    field Personagem personagem;
+    field Personagem inimigo;
+    field int total_clicks;
+    field int damage;
+    field int hp;
+    field int hp_minotauro, dmg_minotauro;
+    field bool desafiou;
+
+    constructor ClickerGame new(){
+        let personagem = Personagem.new(200, 70, 60);
+        let desafiou = false;
+        let total_clicks = 0;
+        let damage = 1;
+        let hp = 10;
+
+        do Output.moveCursor(1,4);
+        do Output.printString("Loja");
+
+        do Output.moveCursor(3,4);
+        do Output.printString("ATK");
+
+        do Output.moveCursor(4,0);
+        do Output.printString("1 - Treinar Mana");
+        do Output.moveCursor(5,0);
+        do Output.printString("valor: 3");
+
+        do Output.moveCursor(6,0);
+        do Output.printString("2 - Magias Basicas");
+        do Output.moveCursor(7,0);
+        do Output.printString("valor: 10");
+        
+        do Output.moveCursor(8,0);
+        do Output.printString("3 - Grimorios");
+        do Output.moveCursor(9,0);
+        do Output.printString("valor: 20");
+
+        do Output.moveCursor(11,0);
+        do Output.printString("HP");
+
+        do Output.moveCursor(12,0);
+        do Output.printString("4 - Armadura");
+        do Output.moveCursor(13,0);
+        do Output.printString("valor: 5");
+
+        do Output.moveCursor(14,0);
+        do Output.printString("5 - Magias Basicas");
+        do Output.moveCursor(15,0);
+        do Output.printString("valor: 12");
+        
+        do Output.moveCursor(16,0);
+        do Output.printString("6 - Grimorios");
+        do Output.moveCursor(17,0);
+        do Output.printString("valor: 25");
+
+
+        do Output.moveCursor(1,24);
+        do Output.printString("Clicks: 0");
+
+        do Output.moveCursor(2,24);
+        do Output.printString("Dano p/click: 1");
+
+        
+        do Output.moveCursor(3,24);
+        do Output.printString("HP:");
+        do draw_hp();
+
+
+        do Output.moveCursor(18,24);
+        do Output.printString("0 - Desafiar Minotauro");
+        do Output.moveCursor(19,24);
+        do Output.printString("Obs: Se morrer perde tudo");
+
+        return this;
+    }
+    /** Disposes this game. */
+   method void dispose() {
+      do personagem.dispose();
+      do Memory.deAlloc(this);
+      return;
+   }
+
+    method void draw_clicks(){
+        do Output.moveCursor(1,32);
+        do Output.printInt(total_clicks);
+        return;
+    }
+
+    method void draw_damage(){
+        do Output.moveCursor(2,38);
+        do Output.printInt(damage);
+        return;
+    }
+    method void draw_hp(){
+        do Output.moveCursor(3,27);
+        do Output.printInt(hp);
+        return;
+    }
+    method void draw_win(){
+        do Screen.clearScreen();
+        do Output.moveCursor(8,20);
+        do Output.printString("PARABENS, VC MATOU O GRANDIOSO");
+        do Output.moveCursor(10,20);
+        do Output.printString("MINOTAURO ANCESTRAL");
+        do Output.moveCursor(12,20);
+        do Output.printString("ESSE ERA O PRIMEIRO DESAFIO");
+        do Output.moveCursor(14,20);
+        do Output.printString("DA GUILDA DOS AVENTUREIROS");
+        do Output.moveCursor(16,20);
+        do Output.printString("PRONTO PARA O REI DEMONIO?");
+        return;
+    }
+    method void draw_lost(){
+        do Screen.clearScreen();
+        do Output.moveCursor(10,20);
+        do Output.printString("VOCE MORREU!!!");
+        do Output.moveCursor(12,20);
+        do Output.printString("Aperte q para sair do jogo.");
+        return;
+    }
+
+    method void draw_hp_minotaur(){
+        do Output.moveCursor(3,55);
+        do Output.printInt(hp_minotauro);
+        return;
+    }
+
+    method void desafiar_minotauro(){
+        let inimigo = Personagem.new(400, 70, 100);
+        let hp_minotauro = 20000;
+        let dmg_minotauro = 1350;
+
+
+        do Output.moveCursor(18,24);
+        do Output.printString("                      ");
+        do Output.moveCursor(19,24);
+        do Output.printString("                         ");
+
+        do Output.moveCursor(1,48);
+        do Output.printString("MinoFuckingTauro");
+        do Output.moveCursor(3,51);
+        do Output.printString("HP: ");
+        do draw_hp_minotaur();
+
+
+        do Output.moveCursor(4, 51);
+        do Output.printString("ATK: ");
+
+        do Output.moveCursor(4,55);
+        do Output.printInt(dmg_minotauro);
+
+        return;
+    }
+
+
+    method void run(){
+        var char key;
+        var boolean exit;
+        let exit = false;
+
+        while(~exit){
+            while (key = 0){
+                let key = Keyboard.keyPressed();
+            }
+            if (key = 81) { let exit = true; } // tecla q acaba o jogo
+            if (~(desafiou)){
+
+                if (key = 32) { //space
+                    let total_clicks = total_clicks + damage;
+                    do draw_clicks();
+                    }
+                if (key = 49) { // 1
+                    if (total_clicks > 2) 
+                    {
+                        let total_clicks = total_clicks - 3;
+                        let damage = damage + 1;
+                        do draw_clicks();
+                        do draw_damage();
+                    }
+                }
+                if (key = 50) { // 2
+                    if (total_clicks > 9) 
+                    {
+                        let total_clicks = total_clicks - 10;
+                        let damage = damage + 3;
+                        do draw_clicks();
+                        do draw_damage();
+
+                    }
+                }
+                if (key = 51) { // 3
+                    if (total_clicks > 19) 
+                    {
+                        let total_clicks = total_clicks - 20;
+                        let damage = damage + 9;
+                        do draw_clicks();
+                        do draw_damage();
+
+                    }
+                }
+
+
+                if (key = 52) { // 4
+                    if (total_clicks > 4) 
+                    {
+                        let total_clicks = total_clicks - 5;
+                        let hp = hp + 10;
+                        do draw_clicks();
+                        do draw_hp();
+
+                    }
+                }
+                if (key = 53) { // 5
+                    if (total_clicks > 11) 
+                    {
+                        let total_clicks = total_clicks - 12;
+                        let hp = hp + 30;
+                        do draw_clicks();
+                        do draw_hp();
+
+                    }
+                }
+                if (key = 54) { // 6
+                    if (total_clicks > 24) 
+                    {
+                        let total_clicks = total_clicks - 25;
+                        let hp = hp + 50;
+                        do draw_clicks();
+                        do draw_hp();
+
+                    }
+                }
+
+                if (key = 84) { // use t para testar o jogo
+                    let hp = 20000;
+                    let damage = 5000;
+                    do draw_hp();
+                    do draw_damage();
+                }
+
+
+                if (key = 48) { // 0
+                    let desafiou = true;
+                    do desafiar_minotauro();
+                }
+            }
+            else{
+                if(hp > 0)
+                {
+                    if (key = 32) { //space
+                    let hp_minotauro = hp_minotauro - damage;
+                    do draw_hp_minotaur();
+                    }
+                    if (hp_minotauro > 0){
+                        let hp = hp - dmg_minotauro;
+                        do draw_hp();
+                    }
+                    if (hp_minotauro = 0){
+                        do draw_win();
+                        return;
+                    }
+                }
+                else{
+                    do draw_lost();
+                }
+
+
+
+            }
+        
+
+            while (~(key = 0)) {
+                let key = Keyboard.keyPressed();
+            }
+        } 
+
+
+
+        return;
+    }
+}
