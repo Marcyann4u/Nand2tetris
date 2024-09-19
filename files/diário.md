@@ -20,3 +20,7 @@
 
 - O bom filho à casa torna, Hardware Simulator, nunca te critiquei. Obrigada por voltar.
 - Não sei se eu gosto dessa cadeira ou se o professor é tão bom e tão legal que ele tornou esse assunto legal. Definitivamente se não fosse Victor eu não sei nem se teria ânimo pra aprender esse negócio.
+
+6° Semana
+
+- Jack é uma linguagem, definitivamente. Estou com dificuldade em alocar memória e manipular números, porém, em termos de adaptação, consegui rapidamente entender as estruturas dos códigos realizados em Jack. Devido a isto meu jogo tem alguns bugs, porém, acredito que são contornáveis.
